@@ -4,8 +4,7 @@ import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
 import { Home, TrendingUp, User, Flame } from 'lucide-react';
 import type { User as UserType, Screen } from '../App';
-
-
+import logo from '../assets/headerlogo.png';
 
 interface NavbarProps {
   currentScreen: Screen;
@@ -23,17 +22,20 @@ export function Navbar({ currentScreen, onNavigate, user }: NavbarProps) {
           {/* Left side - Navigation */}
           <div className="flex items-center space-x-1">
             <div className="flex items-center space-x-2 mr-8">
-  <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
-   <img
-      src="/assets/logo.png" // path from public folder
-      alt="Logo"
-      className="w-full h-full object-cover"
-    />
+  {/* Logo container */}
+  <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+     <img
+    src={logo}
+    alt="Logo"
+    className="max-w-full max-h-full object-contain"
+  />
   </div>
-  <span className="text-xl text-gray-900">Elevate</span>
+
+  {/* Brand name */}
+  <span className="text-xl font-semibold text-gray-900">Elevate</span>
 </div>
 
-            
+
             <Button
               variant={currentScreen === 'home' ? 'default' : 'ghost'}
               size="sm"
@@ -43,7 +45,7 @@ export function Navbar({ currentScreen, onNavigate, user }: NavbarProps) {
               <Home className="w-4 h-4" />
               <span>Home</span>
             </Button>
-            
+
             <Button
               variant={currentScreen === 'progress' ? 'default' : 'ghost'}
               size="sm"
@@ -53,7 +55,7 @@ export function Navbar({ currentScreen, onNavigate, user }: NavbarProps) {
               <TrendingUp className="w-4 h-4" />
               <span>Progress</span>
             </Button>
-            
+
             <Button
               variant={currentScreen === 'profile' ? 'default' : 'ghost'}
               size="sm"
@@ -81,7 +83,10 @@ export function Navbar({ currentScreen, onNavigate, user }: NavbarProps) {
                   <Progress value={levelProgress} className="h-2" />
                 </div>
               </div>
-              <Badge variant="secondary" className="bg-purple-100 text-purple-700 border-purple-200">
+              <Badge
+                variant="secondary"
+                className="bg-purple-100 text-purple-700 border-purple-200"
+              >
                 {user.totalXp} XP
               </Badge>
             </div>
