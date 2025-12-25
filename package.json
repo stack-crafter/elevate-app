@@ -44,19 +44,19 @@
     "recharts": "^2.15.2",
     "sonner": "^2.0.3",
     "tailwind-merge": "*",
-    "vaul": "^1.1.2",
-    "vite": "6.3.5",
-    "@vitejs/plugin-react-swc": "^3.10.2"
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "vite": "6.3.5",
+    "@vitejs/plugin-react-swc": "^3.10.2",
     "@types/node": "^20.10.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3"
   },
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
     "node": "24.x"
